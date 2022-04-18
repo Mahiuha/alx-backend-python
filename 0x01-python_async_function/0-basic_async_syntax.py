@@ -1,14 +1,11 @@
 #!/usr/bin/env python3
-""" 0. The basics of async
-"""
-
+""" Module for 0-basic_async_syntax """
 import asyncio
-import random
+from random import uniform
 
 
 async def wait_random(max_delay: int = 10) -> float:
-    """ Waits for a random delay between 0 and max_delay.
-    """
-    random_num = random.random() * max_delay
-    await asyncio.sleep(random_num)
-    return random_num
+    """ Function wait_random - waits for random time """
+    rand: float = uniform(0, max_delay)
+    await asyncio.sleep(rand)
+    return rand
